@@ -275,3 +275,57 @@ var bindFunc2 = func.bind({ x: 1 }, 4, 5); // this = {}, 4, 5 -->
 
 3-31. 콜백 함수와 함께 thisArg를 받는 메서드
 // 비실행예제
+
+# Chapter 4.
+
+4-1. 콜백 함수 예제(1-1) setInterval
+// delay 300ms마다 카운트되어 0~4 차례대로 출력
+
+4-2. 콜백 함수 예제(1-2) setInterval
+// 4-1과 같은 결과 그러나 코드내에서 콜백함수를 정의해놓고 두고두고 사용이 가능하다는 장점
+
+4-3. 콜백 함수 예제 (2-1) Array.prototype.map
+
+4-4. 콜백 함수 예제 (2-2) Array.prototype.map - 인자의 순서를 임의로 바꾸어 사용한 경우
+// 맵의 정의에 맞추어 메서드가 설계 되어있는데 사용자가 임의로 바꾸면 정상적으로 동작하지 않기 때문에
+// 코딩 시 주의를 요하는 포인트가 될 것으로 생각됨
+
+4-5. 콜백 함수 예제 (2-3) Array.prototype.map - 구현
+// 확인할 수단이 생각이 나질 않습니다...
+
+4-6. 콜백 함수 내부에서의 this
+// 3장에서의 고질적인 문제때문에 this 등의 함수가 포함된 예제의 경우 실행에 장애가 있습니다
+
+4-7. 메서드를 콜백 함수로 전달한 경우
+//global {global: global, clearInterval: ƒ, clearTimeout: ƒ, setInterval: ƒ, setTimeout: ƒ, …} 4 0
+global {global: global, clearInterval: ƒ, clearTimeout: ƒ, setInterval: ƒ, setTimeout: ƒ, …} 5 1
+global {global: global, clearInterval: ƒ, clearTimeout: ƒ, setInterval: ƒ, setTimeout: ƒ, …} 6 2//
+
+4-8. 콜백 함수 내부의 this에 다른 값을 바인딩하는 방법(1) - 전통적인 방식
+
+4-9. 콜백 함수 내부에서 this를 사용하지 않은 경우
+// this에 대한 기술이 없어 함수를 재활용하기 힘듦
+
+4-10. 예제 4-8의 func 함수 재활용
+  // 12번째 줄, 에러 발생: callback must be a function, var 선언으로 함수로 인식하지 않는 듯 
+  // 13번째 줄을 임의로 추가하였으나, 예상과 다르게 obj1이 출력됨
+  // 역시 16번째 줄의 callback3 또한 var 선언으로 인해 함수로 인식하지 못함
+  // 타입을 변환하는 함수가 있다면 활용하여 해결할 수 있을 것으로 보임
+
+4-11. 콜백 함수 내부의 this에 다른 값을 바인딩하는 방법(2) - bind 메서드 활용
+
+4-12. 콜백 지옥 예시 (1-1)
+
+4-13. 콜백 지옥 해결 - 기명함수로 변환
+
+4-14. 비동기 작업의 동기적 표현(1) - Promise(1)
+// ES6의 Promise 함수 이용
+
+4-15. 비동기 작업의 동기적 표현(2) - Promise(2)
+// ES6의 Promise 함수 이용
+
+4-16. 비동기 작업의 동기적 표현(3) - Generator
+// ES6의 Generatoi 함수 이용
+
+4-17. 비동기 작업의 동기적 표현(4) - Promise + Async/await
+// ES2017의 async/await
